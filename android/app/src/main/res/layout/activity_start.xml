@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/launch1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:inputType="text"
+            android:hint="@string/name" />
+
+        <EditText
+            android:id="@+id/pwd"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text"
+            android:inputType="textPassword"
+            android:hint="@string/pwd" />
+
+        <EditText
+            android:id="@+id/pwd1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/edit_text"
+            android:inputType="textPassword"
+            android:hint="@string/pwd1" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_size_mini"
+            android:background="@drawable/button_radius"
+            android:text="@string/register" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_size_mini"
+            android:background="@drawable/button_radius"
+            android:text="@string/login" />
+
+        <TextView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_actions_spacing"
+            android:text="@string/hint"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/hint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_actions_spacing"
+            android:text="@string/hint1"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+
+</RelativeLayout>

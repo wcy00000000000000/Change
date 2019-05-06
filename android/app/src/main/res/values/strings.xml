@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Change</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="name">用户名</string>
+    <string name="pwd">密码</string>
+    <string name="pwd1">确认密码</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="hint">已有账号？现在登录</string>
+    <string name="hint1">没有账号？现在注册</string>
+    <string name="home">首页</string>
+    <string name="me">我的</string>
+    <string name="rank">排行榜</string>
+    <string name="record">记录</string>
+    <string name="account_management">账户管理</string>
+    <string name="grade">当前等级</string>
+    <string name="process">剧情进展</string>
+    <string name="others">OTHERS</string>
+    <string name="feedback">反馈信息</string>
+    <string name="about">关于我们</string>
+    <string name="clear">清除缓存</string>
+    <string name="mission_list">任务列表</string>
+    <string name="today">今日任务</string>
+    <string name="completed">已完成</string>
+    <string name="serial">连续打卡</string>
+    <string name="ranking">排名</string>
+    <string name="edit">编辑</string>
+    <string name="remainder">提示开关</string>
+</resources>
