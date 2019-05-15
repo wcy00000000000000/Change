@@ -2,11 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.wcy.change.mapper.UserGoalMapper">
   <resultMap id="BaseResultMap" type="com.wcy.change.pojo.UserGoal">
-    <id column="userID" jdbcType="VARCHAR" property="userid" />
     <id column="goalID" jdbcType="INTEGER" property="goalid" />
+    <result column="userID" jdbcType="VARCHAR" property="userid" />
     <result column="clockIn" jdbcType="INTEGER" property="clockin" />
-    <result column="miss" jdbcType="INTEGER" property="miss" />
     <result column="continuation" jdbcType="INTEGER" property="continuation" />
+    <result column="start_date" jdbcType="DATE" property="startDate" />
+    <result column="end_date" jdbcType="DATE" property="endDate" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="open" jdbcType="INTEGER" property="open" />
+    <result column="last_date" jdbcType="DATE" property="lastDate" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -67,7 +72,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    userID, goalID, clockIn, miss, continuation
+    goalID, userID, clockIn, continuation, start_date, end_date, name, description, open, 
+    last_date
   </sql>
   <select id="selectByExample" parameterType="com.wcy.change.pojo.UserGoalExample" resultMap="BaseResultMap">
     select
@@ -83,17 +89,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="com.wcy.change.pojo.UserGoalKey" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from user_goal
-    where userID = #{userid,jdbcType=VARCHAR}
-      and goalID = #{goalid,jdbcType=INTEGER}
+    where goalID = #{goalid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.wcy.change.pojo.UserGoalKey">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user_goal
-    where userID = #{userid,jdbcType=VARCHAR}
-      and goalID = #{goalid,jdbcType=INTEGER}
+    where goalID = #{goalid,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.wcy.change.pojo.UserGoalExample">
     delete from user_goal
@@ -102,45 +106,79 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.wcy.change.pojo.UserGoal">
-    insert into user_goal (userID, goalID, clockIn, 
-      miss, continuation)
-    values (#{userid,jdbcType=VARCHAR}, #{goalid,jdbcType=INTEGER}, #{clockin,jdbcType=INTEGER}, 
-      #{miss,jdbcType=INTEGER}, #{continuation,jdbcType=INTEGER})
+    insert into user_goal (goalID, userID, clockIn, 
+      continuation, start_date, end_date, 
+      name, description, open, 
+      last_date)
+    values (#{goalid,jdbcType=INTEGER}, #{userid,jdbcType=VARCHAR}, #{clockin,jdbcType=INTEGER}, 
+      #{continuation,jdbcType=INTEGER}, #{startDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, 
+      #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{open,jdbcType=INTEGER}, 
+      #{lastDate,jdbcType=DATE})
   </insert>
   <insert id="insertSelective" parameterType="com.wcy.change.pojo.UserGoal">
     insert into user_goal
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        userID,
-      </if>
       <if test="goalid != null">
         goalID,
+      </if>
+      <if test="userid != null">
+        userID,
       </if>
       <if test="clockin != null">
         clockIn,
       </if>
-      <if test="miss != null">
-        miss,
-      </if>
       <if test="continuation != null">
         continuation,
       </if>
+      <if test="startDate != null">
+        start_date,
+      </if>
+      <if test="endDate != null">
+        end_date,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="open != null">
+        open,
+      </if>
+      <if test="lastDate != null">
+        last_date,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="userid != null">
-        #{userid,jdbcType=VARCHAR},
-      </if>
       <if test="goalid != null">
         #{goalid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=VARCHAR},
       </if>
       <if test="clockin != null">
         #{clockin,jdbcType=INTEGER},
       </if>
-      <if test="miss != null">
-        #{miss,jdbcType=INTEGER},
-      </if>
       <if test="continuation != null">
         #{continuation,jdbcType=INTEGER},
+      </if>
+      <if test="startDate != null">
+        #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="open != null">
+        #{open,jdbcType=INTEGER},
+      </if>
+      <if test="lastDate != null">
+        #{lastDate,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -153,20 +191,35 @@
   <update id="updateByExampleSelective" parameterType="map">
     update user_goal
     <set>
-      <if test="record.userid != null">
-        userID = #{record.userid,jdbcType=VARCHAR},
-      </if>
       <if test="record.goalid != null">
         goalID = #{record.goalid,jdbcType=INTEGER},
+      </if>
+      <if test="record.userid != null">
+        userID = #{record.userid,jdbcType=VARCHAR},
       </if>
       <if test="record.clockin != null">
         clockIn = #{record.clockin,jdbcType=INTEGER},
       </if>
-      <if test="record.miss != null">
-        miss = #{record.miss,jdbcType=INTEGER},
-      </if>
       <if test="record.continuation != null">
         continuation = #{record.continuation,jdbcType=INTEGER},
+      </if>
+      <if test="record.startDate != null">
+        start_date = #{record.startDate,jdbcType=DATE},
+      </if>
+      <if test="record.endDate != null">
+        end_date = #{record.endDate,jdbcType=DATE},
+      </if>
+      <if test="record.name != null">
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        description = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.open != null">
+        open = #{record.open,jdbcType=INTEGER},
+      </if>
+      <if test="record.lastDate != null">
+        last_date = #{record.lastDate,jdbcType=DATE},
       </if>
     </set>
     <if test="_parameter != null">
@@ -175,11 +228,16 @@
   </update>
   <update id="updateByExample" parameterType="map">
     update user_goal
-    set userID = #{record.userid,jdbcType=VARCHAR},
-      goalID = #{record.goalid,jdbcType=INTEGER},
+    set goalID = #{record.goalid,jdbcType=INTEGER},
+      userID = #{record.userid,jdbcType=VARCHAR},
       clockIn = #{record.clockin,jdbcType=INTEGER},
-      miss = #{record.miss,jdbcType=INTEGER},
-      continuation = #{record.continuation,jdbcType=INTEGER}
+      continuation = #{record.continuation,jdbcType=INTEGER},
+      start_date = #{record.startDate,jdbcType=DATE},
+      end_date = #{record.endDate,jdbcType=DATE},
+      name = #{record.name,jdbcType=VARCHAR},
+      description = #{record.description,jdbcType=VARCHAR},
+      open = #{record.open,jdbcType=INTEGER},
+      last_date = #{record.lastDate,jdbcType=DATE}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -187,25 +245,62 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.wcy.change.pojo.UserGoal">
     update user_goal
     <set>
+      <if test="userid != null">
+        userID = #{userid,jdbcType=VARCHAR},
+      </if>
       <if test="clockin != null">
         clockIn = #{clockin,jdbcType=INTEGER},
-      </if>
-      <if test="miss != null">
-        miss = #{miss,jdbcType=INTEGER},
       </if>
       <if test="continuation != null">
         continuation = #{continuation,jdbcType=INTEGER},
       </if>
+      <if test="startDate != null">
+        start_date = #{startDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null">
+        end_date = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="open != null">
+        open = #{open,jdbcType=INTEGER},
+      </if>
+      <if test="lastDate != null">
+        last_date = #{lastDate,jdbcType=DATE},
+      </if>
     </set>
-    where userID = #{userid,jdbcType=VARCHAR}
-      and goalID = #{goalid,jdbcType=INTEGER}
+    where goalID = #{goalid,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wcy.change.pojo.UserGoal">
     update user_goal
-    set clockIn = #{clockin,jdbcType=INTEGER},
-      miss = #{miss,jdbcType=INTEGER},
-      continuation = #{continuation,jdbcType=INTEGER}
-    where userID = #{userid,jdbcType=VARCHAR}
-      and goalID = #{goalid,jdbcType=INTEGER}
+    set userID = #{userid,jdbcType=VARCHAR},
+      clockIn = #{clockin,jdbcType=INTEGER},
+      continuation = #{continuation,jdbcType=INTEGER},
+      start_date = #{startDate,jdbcType=DATE},
+      end_date = #{endDate,jdbcType=DATE},
+      name = #{name,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      open = #{open,jdbcType=INTEGER},
+      last_date = #{lastDate,jdbcType=DATE}
+    where goalID = #{goalid,jdbcType=INTEGER}
   </update>
+    <resultMap id="RankResultMap" type="com.wcy.change.pojo.Rank">
+        <id column="userID" jdbcType="VARCHAR" property="name" />
+        <result column="c" jdbcType="INTEGER" property="count" />
+    </resultMap>
+    <select id="selectByRank" resultMap="RankResultMap">
+    select userID, sum(continuation) as c
+    from user_goal
+    group by userID
+    order by c desc
+  </select>
+  <select id="selectTotal" resultMap="RankResultMap" parameterType="java.lang.String">
+    select userID, sum(clockIn) as c
+    from user_goal
+    where userID = #{id,jdbcType=VARCHAR}
+  </select>
 </mapper>

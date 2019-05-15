@@ -2,8 +2,9 @@ package com.wcy.change.mapper;
 
 import com.wcy.change.pojo.Users;
 import com.wcy.change.pojo.UsersExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface UsersMapper {
     long countByExample(UsersExample example);

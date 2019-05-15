@@ -1,8 +1,8 @@
 package com.wcy.change.mapper;
 
+import com.wcy.change.pojo.Rank;
 import com.wcy.change.pojo.UserGoal;
 import com.wcy.change.pojo.UserGoalExample;
-import com.wcy.change.pojo.UserGoalKey;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,7 +11,7 @@ public interface UserGoalMapper {
 
     int deleteByExample(UserGoalExample example);
 
-    int deleteByPrimaryKey(UserGoalKey key);
+    int deleteByPrimaryKey(Integer goalid);
 
     int insert(UserGoal record);
 
@@ -19,7 +19,7 @@ public interface UserGoalMapper {
 
     List<UserGoal> selectByExample(UserGoalExample example);
 
-    UserGoal selectByPrimaryKey(UserGoalKey key);
+    UserGoal selectByPrimaryKey(Integer goalid);
 
     int updateByExampleSelective(@Param("record") UserGoal record, @Param("example") UserGoalExample example);
 
@@ -28,4 +28,8 @@ public interface UserGoalMapper {
     int updateByPrimaryKeySelective(UserGoal record);
 
     int updateByPrimaryKey(UserGoal record);
+
+    List<Rank> selectByRank();
+
+    Rank selectTotal(String id);
 }
