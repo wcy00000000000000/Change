@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "G:\\Change-master\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\pc\\.gradle\\caches\\transforms-1\\files-1.1\\ultra-ptr-1.0.11.aar\\360174d02084a85d24cdc75ed2051443\\res\\values-zh\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "187,240,296,351,401,464,524,579,640",
+                        "endColumns": "52,55,54,49,62,59,54,60,53",
+                        "endOffsets": "235,291,346,396,459,519,574,635,689"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,164,219,269,332,392,447,508",
+                        "endColumns": "52,55,54,49,62,59,54,60,53",
+                        "endOffsets": "103,159,214,264,327,387,442,503,557"
+                    }
+                }
+            ]
+        }
+    ]
+}

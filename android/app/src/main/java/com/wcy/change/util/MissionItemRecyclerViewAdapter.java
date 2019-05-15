@@ -1,11 +1,17 @@
 package com.wcy.change.util;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.wcy.change.EditMissionActivity;
+import com.wcy.change.MainActivity;
+import com.wcy.change.MissionActivity;
 import com.wcy.change.R;
 
 import java.util.List;
@@ -28,8 +34,21 @@ public class MissionItemRecyclerViewAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         MissionItemViewHolder missionItemView = (MissionItemViewHolder) viewHolder;
-        missionItemView.setDay("第" + list.get(i).getDay() + "天");
-        missionItemView.setTitle(list.get(i).getName());
+
+        final MissionItem currentItem = list.get(i);
+        missionItemView.setDay("第" + currentItem.getDay() + "天");
+        missionItemView.setTitle(currentItem.getName());
+
+        missionItemView.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //item点击事件
+                Intent intent = new Intent(context,MissionActivity.class);
+                intent.putExtra("mission",currentItem.getName());
+                context.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

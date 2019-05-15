@@ -4,6 +4,16 @@ public class MissionItem {
     private String name;
     private int day;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
+
     public String getName() {
         return name;
     }

@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         viewPager = findViewById(R.id.main_view_pager);
+        //翻页监听
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -84,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         });
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdapter);
+
         List<Fragment> list = new ArrayList<>();
         list.add(HomeFragment.newInstance());
         list.add(RecordFragment.newInstance());
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MissionActivity.class);
+                Intent intent = new Intent(MainActivity.this, EditMissionActivity.class);
                 startActivity(intent);
             }
         });

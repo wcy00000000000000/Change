@@ -47,6 +47,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         spinner = view.findViewById(R.id.filter);
+        //今日任务，一周任务，或者所有任务
         missionType = view.findViewById(R.id.missionType);
         recyclerView = view.findViewById(R.id.mission_item_list);
         return view;
@@ -89,6 +90,8 @@ public class HomeFragment extends Fragment {
                 spinner.setSelection(0);
             }
         });
+
+        //给recyclerView绑定数据
         List<MissionItem> list = new ArrayList<>();
         for (int i = 1; i <= 10; i++) {
             MissionItem item = new MissionItem();
