@@ -47,7 +47,7 @@ public class EditMissionActivity extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(EditMissionActivity.this,MissionActivity.class);
+                Intent intent = new Intent(EditMissionActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });

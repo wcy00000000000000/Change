@@ -1411,6 +1411,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable aboutus
 drawable avd_hide_password
 drawable avd_show_password
 drawable black_background
@@ -1452,6 +1453,16 @@ drawable ic_star_black_24dp
 drawable ic_star_pink_24dp
 drawable ic_whatshot_pink_24dp
 drawable icon
+drawable index1
+drawable index10
+drawable index2
+drawable index3
+drawable index4
+drawable index5
+drawable index6
+drawable index7
+drawable index8
+drawable index9
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1569,6 +1580,7 @@ id design_navigation_view
 id detailDescription
 id detailEndTime
 id detailName
+id detailOpen
 id detailStartTime
 id detailTotal
 id determinate
@@ -1581,7 +1593,9 @@ id dpv_hour
 id dpv_minute
 id dpv_month
 id dpv_year
+id editDescription
 id editName
+id editOpen
 id edit_mission
 id edit_query
 id emptyview
@@ -1633,6 +1647,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id image_launch
 id indeterminate
 id indicatorInside
 id info
@@ -1643,6 +1658,7 @@ id item_check
 id item_check_day
 id item_check_text
 id item_day
+id item_description
 id item_name
 id item_rank
 id item_touch_helper_previous_elevation
@@ -1884,6 +1900,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_image
 layout activity_launch
 layout activity_main
 layout activity_mission

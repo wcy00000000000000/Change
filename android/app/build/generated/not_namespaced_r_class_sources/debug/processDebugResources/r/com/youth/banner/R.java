@@ -36,10 +36,10 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int black_background = 0x7f07005d;
-        public static final int gray_radius = 0x7f070066;
-        public static final int no_banner = 0x7f070087;
-        public static final int white_radius = 0x7f0700a2;
+        public static final int black_background = 0x7f07005e;
+        public static final int gray_radius = 0x7f070067;
+        public static final int no_banner = 0x7f070092;
+        public static final int white_radius = 0x7f0700ad;
     }
     public static final class id {
         private id() {}
@@ -52,20 +52,20 @@ public final class R {
         public static final int center_crop = 0x7f080037;
         public static final int center_inside = 0x7f080039;
         public static final int circleIndicator = 0x7f080040;
-        public static final int fit_center = 0x7f08007b;
-        public static final int fit_end = 0x7f08007c;
-        public static final int fit_start = 0x7f08007d;
-        public static final int fit_xy = 0x7f08007e;
-        public static final int indicatorInside = 0x7f080097;
-        public static final int matrix = 0x7f0800b9;
-        public static final int numIndicator = 0x7f0800dd;
-        public static final int numIndicatorInside = 0x7f0800de;
-        public static final int titleView = 0x7f08013e;
+        public static final int fit_center = 0x7f08007e;
+        public static final int fit_end = 0x7f08007f;
+        public static final int fit_start = 0x7f080080;
+        public static final int fit_xy = 0x7f080081;
+        public static final int indicatorInside = 0x7f08009b;
+        public static final int matrix = 0x7f0800be;
+        public static final int numIndicator = 0x7f0800e2;
+        public static final int numIndicatorInside = 0x7f0800e3;
+        public static final int titleView = 0x7f080143;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int banner = 0x7f0b0021;
+        public static final int banner = 0x7f0b0022;
     }
     public static final class styleable {
         private styleable() {}

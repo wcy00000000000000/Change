@@ -36,6 +36,8 @@
         <activity android:name="com.wcy.change.StartActivity" />
         <activity android:name="com.wcy.change.MissionActivity" />
         <activity android:name="com.wcy.change.EditMissionActivity" />
+        <activity android:name="com.wcy.change.UpdateMissionActivity" />
+        <activity android:name="com.wcy.change.ImageActivity" />
     </application>
 
 </manifest>

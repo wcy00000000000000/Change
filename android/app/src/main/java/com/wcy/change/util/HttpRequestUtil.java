@@ -14,7 +14,7 @@ import okhttp3.Response;
  * Created by WCY on 2019/5/6
  */
 public class HttpRequestUtil {
-    public static String baseUrl = "http://jssmk7.natappfree.cc";
+    public static String baseUrl = "http://nuaius.natappfree.cc";
     private OkHttpClient client;//所有请求都由同一个client进行，减少资源消耗
 
     private HttpRequestUtil() {

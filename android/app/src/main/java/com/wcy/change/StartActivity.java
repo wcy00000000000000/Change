@@ -95,11 +95,11 @@ public class StartActivity extends AppCompatActivity {
                     new AlertDialog.Builder(context).setTitle("提示").setMessage("用户名/密码错误").create().show();
                 } else {
                     //用户信息存放
-                   // final User user=new User();
                     SharedPreferences sharedPreferences = getSharedPreferences("change", MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString("userID", user.getUserid());
                     editor.apply();
+
                     Intent intent = new Intent(StartActivity.this, MainActivity.class);
                     startActivity(intent);
                 }

@@ -11,6 +11,7 @@ import com.wcy.change.R;
 public class MissionItemViewHolder extends RecyclerView.ViewHolder {
     private TextView name, day;
     private ImageView check;
+    private TextView checkView; //点击此位置，会显示打卡对勾
 
     public MissionItemViewHolder(@NonNull View view) {
         super(view);
@@ -18,12 +19,15 @@ public class MissionItemViewHolder extends RecyclerView.ViewHolder {
         day = view.findViewById(R.id.item_day);
         check = view.findViewById(R.id.item_check);
         check.setVisibility(View.GONE);
-        view.findViewById(R.id.item_check_text).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                check.setVisibility(View.VISIBLE);
-            }
-        });
+        checkView = view.findViewById(R.id.item_check_text);
+
+    }
+
+    public ImageView getCheck(){
+        return check;
+    }
+    public TextView getCheckView(){
+        return checkView;
     }
 
     public void setTitle(String title) {

@@ -231,10 +231,15 @@
                 android:textSize="20sp"
                 android:layout_marginLeft="30dp"
                 android:layout_centerVertical="true"/>
-            <Switch
+            <TextView
+                android:id="@+id/detailOpen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"/>
+                android:hint="提醒"
+                android:layout_alignParentRight="true"
+                android:background="@null"
+                android:focusable="false"
+                />
         </RelativeLayout>
     </LinearLayout>
 

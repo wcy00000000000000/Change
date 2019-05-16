@@ -1,7 +1,13 @@
 package com.wcy.change.dao;
 
-/**
- * Created by WCY on 2019/4/13
- */
+import com.wcy.change.pojo.UserGoal;
+
+import java.util.List;
+
 public interface UserGoalDao {
+    List<UserGoal> findAllGoal(String userid);
+    UserGoal findGoalById(String goalid);
+    boolean checkin(String goalid);
+    boolean update(UserGoal obj);
+
 }

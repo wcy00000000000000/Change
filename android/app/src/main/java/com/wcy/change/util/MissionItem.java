@@ -3,16 +3,25 @@ package com.wcy.change.util;
 public class MissionItem {
     private String name;
     private int day;
+    private Integer id;
+    private boolean checkedToday;
 
-    public int getId() {
+    public boolean getCheckedToday() {
+        return checkedToday;
+    }
+
+    public void setCheckedToday(boolean checkedToday) {
+        this.checkedToday = checkedToday;
+    }
+
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
-
-    private int id;
 
     public String getName() {
         return name;

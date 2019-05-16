@@ -45,6 +45,25 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean insertUser(User obj) {
-        return true;
+        final CountDownLatch latch = new CountDownLatch(1);
+        final boolean[] flag = {false};
+        HttpRequestUtil.getInstance().get(HttpRequestUtil.baseUrl+"/user/register?name="+obj.getUserid()+"&password="+obj.getPassword(), new HttpCallbackListener() {
+            @Override
+            public void onFinish(final String response) {
+                flag[0] = (boolean) JSON.parse(response);
+                latch.countDown();
+            }
+            @Override
+            public void onError(Exception e) {
+                super.onError(e);
+                Log.i("insertUser","fail");
+            }
+        });
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return flag[0];
     }
 }

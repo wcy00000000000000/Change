@@ -27,6 +27,8 @@
         <activity android:name=".StartActivity" />
         <activity android:name=".MissionActivity"></activity>
         <activity android:name=".EditMissionActivity"></activity>
+        <activity android:name=".UpdateMissionActivity"></activity>
+        <activity android:name=".ImageActivity"></activity>
     </application>
 
 </manifest>

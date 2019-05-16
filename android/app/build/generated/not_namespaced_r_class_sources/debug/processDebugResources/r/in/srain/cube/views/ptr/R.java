@@ -25,22 +25,22 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int ptr_rotate_arrow = 0x7f070096;
+        public static final int ptr_rotate_arrow = 0x7f0700a1;
     }
     public static final class id {
         private id() {}
 
-        public static final int ptr_classic_header_rotate_view = 0x7f0800eb;
-        public static final int ptr_classic_header_rotate_view_header_last_update = 0x7f0800ec;
-        public static final int ptr_classic_header_rotate_view_header_text = 0x7f0800ed;
-        public static final int ptr_classic_header_rotate_view_header_title = 0x7f0800ee;
-        public static final int ptr_classic_header_rotate_view_progressbar = 0x7f0800ef;
+        public static final int ptr_classic_header_rotate_view = 0x7f0800f0;
+        public static final int ptr_classic_header_rotate_view_header_last_update = 0x7f0800f1;
+        public static final int ptr_classic_header_rotate_view_header_text = 0x7f0800f2;
+        public static final int ptr_classic_header_rotate_view_header_title = 0x7f0800f3;
+        public static final int ptr_classic_header_rotate_view_progressbar = 0x7f0800f4;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int cube_ptr_classic_default_header = 0x7f0b0023;
-        public static final int cube_ptr_simple_loading = 0x7f0b0024;
+        public static final int cube_ptr_classic_default_header = 0x7f0b0024;
+        public static final int cube_ptr_simple_loading = 0x7f0b0025;
     }
     public static final class string {
         private string() {}

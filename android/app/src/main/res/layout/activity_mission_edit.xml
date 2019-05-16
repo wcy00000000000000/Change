@@ -196,7 +196,7 @@
                     android:layout_centerVertical="true"/>
             </RelativeLayout>
             <EditText
-                android:id="@+id/detailName"
+                android:id="@+id/editDescription"
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
@@ -229,6 +229,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_centerVertical="true"/>
                 <Switch
+                    android:id="@+id/editOpen"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"/>
