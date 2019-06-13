@@ -37,7 +37,17 @@
         <activity android:name="com.wcy.change.MissionActivity" />
         <activity android:name="com.wcy.change.EditMissionActivity" />
         <activity android:name="com.wcy.change.UpdateMissionActivity" />
-        <activity android:name="com.wcy.change.ImageActivity" />
+        <activity
+            android:name="com.wcy.change.AccountActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.wcy.change.ImageActivity"
+            android:label="@string/title_activity_image"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="com.wcy.change.FeedBackActivity"
+            android:label="@string/title_activity_feed_back"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

@@ -10,10 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.wcy.change.R;
+import com.wcy.change.dao.RankDao;
+import com.wcy.change.dao.daoImpl.RankDaoImpl;
+import com.wcy.change.pojo.Rank;
 import com.wcy.change.util.RankItem;
 import com.wcy.change.util.RankItemRecyclerViewAdapter;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class RankFragment extends Fragment {
@@ -58,21 +62,32 @@ public class RankFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        RankDao rankDao=new RankDaoImpl();
+        List<Rank> ranks=rankDao.getRank();
         List<RankItem> list = new ArrayList<>();
+//        for(Rank rank:ranks){
+//            RankItem item = new RankItem();
+//            item.setRank("冠军");
+//            item.setDay(rank.getCount());
+//            item.setName(rank.getName());
+//            list.add(item);
+//        }
+//        Iterator it=ranks.iterator();
         RankItem item = new RankItem();
         item.setRank("冠军");
-        item.setDay(100);
-        item.setName("用户1");
+        item.setDay(ranks.get(0).getCount());
+        item.setName(ranks.get(0).getName());
         list.add(item);
         item = new RankItem();
         item.setRank("亚军");
-        item.setDay(74);
-        item.setName("用户2");
+
+        item.setDay(ranks.get(1).getCount());
+        item.setName(ranks.get(1).getName());
         list.add(item);
         item = new RankItem();
         item.setRank("季军");
-        item.setDay(55);
-        item.setName("用户3");
+        item.setDay(ranks.get(2).getCount());
+        item.setName(ranks.get(2).getName());
         list.add(item);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new RankItemRecyclerViewAdapter(list, getContext()));

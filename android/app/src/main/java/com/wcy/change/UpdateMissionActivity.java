@@ -37,6 +37,10 @@ public class UpdateMissionActivity extends AppCompatActivity {
         final EditText description = findViewById(R.id.editDescription);
         Switch open = findViewById(R.id.editOpen);
 
+        TextView title = findViewById(R.id.mission_title);
+        TextView titleAdd = findViewById(R.id.mission_add);
+        titleAdd.setVisibility(View.GONE);
+
         //获取需要更改的任务
         Intent intent = getIntent();
         final String goalId = intent.getStringExtra("goalUpdate");

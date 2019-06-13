@@ -28,7 +28,18 @@
         <activity android:name=".MissionActivity"></activity>
         <activity android:name=".EditMissionActivity"></activity>
         <activity android:name=".UpdateMissionActivity"></activity>
-        <activity android:name=".ImageActivity"></activity>
+
+        <activity
+            android:name=".AccountActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ImageActivity"
+            android:label="@string/title_activity_image"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FeedBackActivity"
+            android:label="@string/title_activity_feed_back"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

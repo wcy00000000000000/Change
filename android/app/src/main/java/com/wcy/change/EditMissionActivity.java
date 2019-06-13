@@ -1,15 +1,24 @@
 package com.wcy.change;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
+import com.wcy.change.dao.UserGoalDao;
+import com.wcy.change.dao.daoImpl.UserGoalDaoImpl;
+import com.wcy.change.pojo.UserGoal;
 import com.wcy.change.util.datepicker.CustomDatePicker;
 import com.wcy.change.util.datepicker.DateFormatUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 //任务详情
 public class EditMissionActivity extends AppCompatActivity {
@@ -23,6 +32,13 @@ public class EditMissionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mission_edit);
         final Button finish = findViewById(R.id.finish_edit);
         final Button back = findViewById(R.id.mission_back);
+
+        TextView title = findViewById(R.id.mission_title);
+        TextView titleAdd = findViewById(R.id.mission_add);
+        title.setVisibility(View.GONE);
+        final EditText name=findViewById(R.id.editName);
+        final EditText description=findViewById(R.id.editDescription);
+        final Switch inform=findViewById(R.id.editOpen);
         //编辑开始时间
         findViewById(R.id.ll_date).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +63,31 @@ public class EditMissionActivity extends AppCompatActivity {
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SimpleDateFormat formatter = new SimpleDateFormat( "yyyy-MM-dd");
+                try {
+                    String g_name = name.getText().toString();
+                    Date g_start_date = formatter.parse(mStartDate.getText().toString());
+                    Date g_end_date=formatter.parse(mEndDate.getText().toString());
+                    String g_description=description.getText().toString();
+
+                    SharedPreferences settings=getSharedPreferences("change", MODE_PRIVATE);
+                    String uid=settings.getString("userID","");
+                    UserGoal userGoal=new UserGoal();
+                    userGoal.setUserid(uid);
+                    userGoal.setName(g_name);
+                    userGoal.setStartDate(g_start_date);
+                    userGoal.setEndDate(g_end_date);
+                    userGoal.setDescription(g_description);
+                    userGoal.setOpen(inform.isChecked()?1:0);
+
+                    final UserGoalDao userGoalDao=new UserGoalDaoImpl();
+                    userGoalDao.insertUserGoal(userGoal);
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+
                 Intent intent = new Intent(EditMissionActivity.this,MainActivity.class);
                 startActivity(intent);
             }

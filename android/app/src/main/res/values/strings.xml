@@ -44,4 +44,11 @@
     <string name="select_time">选择时间</string>
     <string name="current_time">当前时间</string>
     <string name="think_of_the_good_future">Think of the good future</string>
+    <string name="title_activity_account">AccountActivity</string>
+    <string name="edit_account">编辑</string>
+    <string name="confirm_account">确定</string>
+    <string name="account_id">ID</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_image">ImageActivity</string>
+    <string name="title_activity_feed_back">FeedBackActivity</string>
 </resources>

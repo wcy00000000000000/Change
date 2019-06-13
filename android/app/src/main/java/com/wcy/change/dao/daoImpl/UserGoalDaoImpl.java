@@ -124,6 +124,38 @@ public class UserGoalDaoImpl implements UserGoalDao {
         return flag[0];
     }
 
+    @Override
+    public boolean insertUserGoal(UserGoal obj){
+        final CountDownLatch latch = new CountDownLatch(1);
+        final boolean[] flag = {false};
+//        JSONObject jsonObject=new JSONObject();
+//        jsonObject.put("name",obj.getName());
+//        jsonObject.put("uid",obj.getUserid());
+//        jsonObject.put("startDate",obj.getStartDate());
+//        jsonObject.put("endDate",obj.getEndDate());
+
+        RequestBody requestBody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"),JSON.toJSONString(obj));
+
+        HttpRequestUtil.getInstance().post(HttpRequestUtil.baseUrl + "/goal/insert", requestBody, new HttpCallbackListener() {
+            @Override
+            public void onFinish(String response) {
+                flag[0] = (boolean) JSON.parse(response);
+                latch.countDown();
+            }
+            @Override
+            public void onError(Exception e) {
+                super.onError(e);
+                Log.i("InsertUserGoal","fail");
+            }
+        });
+
+        try {
+            latch.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return flag[0];
+    }
 
 
 

@@ -9,5 +9,5 @@ public interface UserGoalDao {
     UserGoal findGoalById(String goalid);
     boolean checkin(String goalid);
     boolean update(UserGoal obj);
-
+    boolean insertUserGoal(UserGoal obj);
 }

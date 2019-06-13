@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".AccountActivity">-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/launch_account" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="493dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="11dp"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <Button
+            android:id="@+id/account_back"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/white_radius"
+            android:text="&lt;" />
+
+        <TextView
+            android:id="@+id/account_id"
+            android:layout_width="340dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:hint="@string/account_id"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/account_name"
+            android:layout_width="352dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:hint="@string/name"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/account_pwd"
+            android:layout_width="352dp"
+            android:layout_height="58dp"
+            android:hint="@string/pwd"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/account_pwd1"
+            android:layout_width="352dp"
+            android:layout_height="57dp"
+            android:hint="@string/pwd1"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/account_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_size_mini"
+            android:background="@drawable/button_radius"
+            android:text="@string/confirm_account" />
+
+        <Button
+            android:id="@+id/account_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_size_mini"
+            android:background="@drawable/button_radius"
+            android:text="@string/edit_account" />
+
+        <TextView
+            android:id="@+id/account_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_actions_spacing"
+
+            android:textColor="@color/colorPrimaryDark" />
+
+        <TextView
+            android:id="@+id/account_hint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/fab_actions_spacing"
+
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout><!--</android.support.design.widget.CoordinatorLayout>-->

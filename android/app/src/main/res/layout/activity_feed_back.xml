@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FeedBackActivity">
+
+    <Button
+        android:id="@+id/fb_back"
+        android:layout_width="35dp"
+        android:layout_height="28dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/white_radius"
+        android:text="&lt;"
+        app:layout_constraintBottom_toTopOf="@+id/fb_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/fb_description"
+        android:layout_width="349dp"
+        android:layout_height="258dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="13dp"
+        android:background="@drawable/gray_radius"
+        android:hint="请把您的意见告诉我们吧！"
+        android:padding="5dp"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/fb_submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fb_back" />
+
+    <Button
+        android:id="@+id/fb_submit"
+        android:layout_width="77dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="141dp"
+        android:background="@drawable/button_radius"
+        android:text="提交"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fb_description" />
+
+</android.support.constraint.ConstraintLayout>

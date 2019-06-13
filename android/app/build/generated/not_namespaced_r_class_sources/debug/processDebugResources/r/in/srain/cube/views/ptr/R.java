@@ -30,30 +30,30 @@ public final class R {
     public static final class id {
         private id() {}
 
-        public static final int ptr_classic_header_rotate_view = 0x7f0800f0;
-        public static final int ptr_classic_header_rotate_view_header_last_update = 0x7f0800f1;
-        public static final int ptr_classic_header_rotate_view_header_text = 0x7f0800f2;
-        public static final int ptr_classic_header_rotate_view_header_title = 0x7f0800f3;
-        public static final int ptr_classic_header_rotate_view_progressbar = 0x7f0800f4;
+        public static final int ptr_classic_header_rotate_view = 0x7f080102;
+        public static final int ptr_classic_header_rotate_view_header_last_update = 0x7f080103;
+        public static final int ptr_classic_header_rotate_view_header_text = 0x7f080104;
+        public static final int ptr_classic_header_rotate_view_header_title = 0x7f080105;
+        public static final int ptr_classic_header_rotate_view_progressbar = 0x7f080106;
     }
     public static final class layout {
         private layout() {}
 
-        public static final int cube_ptr_classic_default_header = 0x7f0b0024;
-        public static final int cube_ptr_simple_loading = 0x7f0b0025;
+        public static final int cube_ptr_classic_default_header = 0x7f0b0026;
+        public static final int cube_ptr_simple_loading = 0x7f0b0027;
     }
     public static final class string {
         private string() {}
 
-        public static final int cube_ptr_hours_ago = 0x7f0e0032;
-        public static final int cube_ptr_last_update = 0x7f0e0033;
-        public static final int cube_ptr_minutes_ago = 0x7f0e0034;
-        public static final int cube_ptr_pull_down = 0x7f0e0035;
-        public static final int cube_ptr_pull_down_to_refresh = 0x7f0e0036;
-        public static final int cube_ptr_refresh_complete = 0x7f0e0037;
-        public static final int cube_ptr_refreshing = 0x7f0e0038;
-        public static final int cube_ptr_release_to_refresh = 0x7f0e0039;
-        public static final int cube_ptr_seconds_ago = 0x7f0e003a;
+        public static final int cube_ptr_hours_ago = 0x7f0e0034;
+        public static final int cube_ptr_last_update = 0x7f0e0035;
+        public static final int cube_ptr_minutes_ago = 0x7f0e0036;
+        public static final int cube_ptr_pull_down = 0x7f0e0037;
+        public static final int cube_ptr_pull_down_to_refresh = 0x7f0e0038;
+        public static final int cube_ptr_refresh_complete = 0x7f0e0039;
+        public static final int cube_ptr_refreshing = 0x7f0e003a;
+        public static final int cube_ptr_release_to_refresh = 0x7f0e003b;
+        public static final int cube_ptr_seconds_ago = 0x7f0e003c;
     }
     public static final class styleable {
         private styleable() {}

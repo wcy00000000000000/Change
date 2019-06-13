@@ -1501,7 +1501,18 @@ id META
 id SHIFT
 id SYM
 id about
+id about_us
+id account_back
+id account_confirm
+id account_edit
+id account_hint
+id account_hint1
+id account_id
+id account_manage
 id account_management
+id account_name
+id account_pwd
+id account_pwd1
 id action0
 id action_bar
 id action_bar_activity_content
@@ -1547,6 +1558,7 @@ id brief_rank_item_list
 id buffer
 id butt
 id buttonPanel
+id cache
 id cancel_action
 id center
 id center_crop
@@ -1613,6 +1625,10 @@ id exp_section_title
 id expand_activities_button
 id expanded_menu
 id fab_expand_menu_button
+id fb_back
+id fb_description
+id fb_feedback
+id fb_submit
 id feedback
 id fill
 id fill_horizontal
@@ -1630,7 +1646,6 @@ id forever
 id ghost_view
 id glide_custom_view_target_tag
 id gone
-id grade
 id group_divider
 id groups
 id h_back
@@ -1667,6 +1682,7 @@ id labeled
 id largeLabel
 id launch
 id launch1
+id launch_account
 id lay_down
 id left
 id line1
@@ -1685,6 +1701,7 @@ id masked
 id match_parent
 id match_view
 id matrix
+id me_story
 id media_actions
 id message
 id middle
@@ -1698,6 +1715,7 @@ id missionNumSeries
 id missionRank
 id missionSerials
 id missionType
+id mission_add
 id mission_back
 id mission_item_list
 id mission_title
@@ -1900,6 +1918,8 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_account
+layout activity_feed_back
 layout activity_image
 layout activity_launch
 layout activity_main
@@ -2004,6 +2024,7 @@ string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string about
+string account_id
 string account_management
 string app_name
 string appbar_scrolling_view_behavior
@@ -2014,6 +2035,7 @@ string character_counter_pattern
 string clear
 string completed
 string confirm
+string confirm_account
 string cube_ptr_hours_ago
 string cube_ptr_last_update
 string cube_ptr_minutes_ago
@@ -2027,6 +2049,7 @@ string current_date
 string current_time
 string day
 string edit
+string edit_account
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string feedback
@@ -2065,6 +2088,10 @@ string serial
 string status_bar_notification_info_overflow
 string think_of_the_good_future
 string title
+string title_activity_account
+string title_activity_feed_back
+string title_activity_image
+string title_activity_main2
 string title_dashboard
 string title_home
 string title_notifications
